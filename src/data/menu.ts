@@ -1,8 +1,7 @@
-import matchaLatteImg from "@/assets/matcha-latte.jpg";
-import matchaOriginalImg from "@/assets/matcha-original.jpg";
-import matchaFrappeImg from "@/assets/matcha-frappe.jpg";
-import matchaAffogatoImg from "@/assets/matcha-affogato.jpg";
-import matchaSmoothieImg from "@/assets/matcha-smoothie.jpg";
+import creamyMatchaImg from "@/assets/creamy-matcha.jpg";
+import creamyMatchaStrawberryImg from "@/assets/creamy-matcha-strawberry.jpg";
+import creamyChocoImg from "@/assets/creamy-choco.jpg";
+import creamyChocoStrawberryImg from "@/assets/creamy-choco-strawberry.jpg";
 
 export interface MenuItem {
   id: string;
@@ -21,54 +20,36 @@ export const menuItems: MenuItem[] = [
     name: "Creamy Matcha",
     description: "Matcha premium dengan susu segar dan es, creamy dan menyegarkan.",
     price: 18000,
-    image: matchaLatteImg,
+    image: creamyMatchaImg,
     category: "signature",
     isBestSeller: true,
   },
   {
     id: "2",
     name: "Creamy Matcha Strawberry",
-    description: "Matcha murni diseduh sempurna, rasa autentik Jepang.",
+    description: "Perpaduan matcha creamy dengan manis segar strawberry.",
     price: 23000,
-    image: matchaOriginalImg,
-    category: "classic",
+    image: creamyMatchaStrawberryImg,
+    category: "signature",
     isBestSeller: true,
   },
   {
     id: "3",
     name: "Creamy Choco Latte",
-    description: "Matcha blended dengan es dan whipped cream, sempurna untuk hari panas.",
-    price: 32000,
-    image: matchaFrappeImg,
-    category: "signature",
+    description: "Cokelat creamy dengan susu segar, lembut dan nikmat.",
+    price: 20000,
+    image: creamyChocoImg,
+    category: "classic",
     isBestSeller: true,
   },
   {
     id: "4",
-    name: "Coming Soon",
-    description: "Menu baru segera hadir. Nantikan ya!",
-    price: 0,
-    image: matchaAffogatoImg,
+    name: "Creamy Choco Strawberry",
+    description: "Cokelat creamy dipadukan dengan strawberry yang segar.",
+    price: 25000,
+    image: creamyChocoStrawberryImg,
     category: "special",
-    comingSoon: true,
-  },
-  {
-    id: "5",
-    name: "Coming Soon",
-    description: "Menu baru segera hadir. Nantikan ya!",
-    price: 0,
-    image: matchaSmoothieImg,
-    category: "special",
-    comingSoon: true,
-  },
-  {
-    id: "6",
-    name: "Coming Soon",
-    description: "Menu baru segera hadir. Nantikan ya!",
-    price: 0,
-    image: matchaLatteImg,
-    category: "classic",
-    comingSoon: true,
+    isBestSeller: true,
   },
 ];
 
@@ -79,3 +60,4 @@ export const formatRupiah = (price: number): string => {
     minimumFractionDigits: 0,
   }).format(price);
 };
+ 
