@@ -16,15 +16,16 @@ const ProductCard = ({ item, index = 0 }: ProductCardProps) => {
       className={`group rounded-2xl bg-card overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 ${item.comingSoon ? "opacity-60" : ""}`}
     >
       <div className="aspect-square overflow-hidden relative">
-        <img
-          src={item.image}
-          alt={item.name}
-          className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${item.comingSoon ? "blur-sm grayscale" : ""}`}
-        />
-        {item.comingSoon && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <span className="text-white font-serif text-xl font-semibold tracking-wide">Coming Soon</span>
+        {item.comingSoon ? (
+          <div className="w-full h-full bg-muted flex items-center justify-center">
+            <span className="text-muted-foreground font-serif text-xl font-semibold tracking-wide">Coming Soon</span>
           </div>
+        ) : (
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         )}
       </div>
       <div className="p-5">
