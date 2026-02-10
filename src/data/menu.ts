@@ -35,7 +35,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "3",
-    name: "Matcha Frappe",
+    name: "Creamy Choco Latte",
     description: "Matcha blended dengan es dan whipped cream, sempurna untuk hari panas.",
     price: 32000,
     image: matchaFrappeImg,
