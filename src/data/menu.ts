@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "2",
-    name: "Hot Matcha Original",
+    name: "Creamy Matcha Strawberry",
     description: "Matcha murni diseduh sempurna, rasa autentik Jepang.",
     price: 25000,
     image: matchaOriginalImg,
