@@ -20,7 +20,7 @@ export const menuItems: MenuItem[] = [
     id: "1",
     name: "Creamy Matcha",
     description: "Matcha premium dengan susu segar dan es, creamy dan menyegarkan.",
-    price: 28000,
+    price: 18000,
     image: matchaLatteImg,
     category: "signature",
     isBestSeller: true,
