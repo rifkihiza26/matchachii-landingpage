@@ -17,7 +17,7 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     id: "1",
-    name: "Iced Matcha Latte",
+    name: "Creamy Matcha",
     description: "Matcha premium dengan susu segar dan es, creamy dan menyegarkan.",
     price: 28000,
     image: matchaLatteImg,
