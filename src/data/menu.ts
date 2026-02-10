@@ -12,6 +12,7 @@ export interface MenuItem {
   image: string;
   category: "signature" | "classic" | "special";
   isBestSeller?: boolean;
+  comingSoon?: boolean;
 }
 
 export const menuItems: MenuItem[] = [
@@ -44,43 +45,30 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "4",
-    name: "Matcha Affogato",
-    description: "Perpaduan matcha hangat dengan vanilla ice cream yang lembut.",
-    price: 35000,
+    name: "Coming Soon",
+    description: "Menu baru segera hadir. Nantikan ya!",
+    price: 0,
     image: matchaAffogatoImg,
     category: "special",
+    comingSoon: true,
   },
   {
     id: "5",
-    name: "Matcha Smoothie Bowl",
-    description: "Bowl matcha sehat dengan granola dan buah segar pilihan.",
-    price: 38000,
+    name: "Coming Soon",
+    description: "Menu baru segera hadir. Nantikan ya!",
+    price: 0,
     image: matchaSmoothieImg,
     category: "special",
+    comingSoon: true,
   },
   {
     id: "6",
-    name: "Matcha Oat Latte",
-    description: "Matcha latte dengan oat milk, cocok untuk kamu yang plant-based.",
-    price: 30000,
+    name: "Coming Soon",
+    description: "Menu baru segera hadir. Nantikan ya!",
+    price: 0,
     image: matchaLatteImg,
     category: "classic",
-  },
-  {
-    id: "7",
-    name: "Matcha Espresso Fusion",
-    description: "Kombinasi unik matcha dan espresso, rasa bold dan segar.",
-    price: 33000,
-    image: matchaOriginalImg,
-    category: "special",
-  },
-  {
-    id: "8",
-    name: "Matcha Mango Cooler",
-    description: "Matcha segar dengan jus mangga alami, manis dan tropical.",
-    price: 30000,
-    image: matchaFrappeImg,
-    category: "signature",
+    comingSoon: true,
   },
 ];
 
