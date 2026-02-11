@@ -1,7 +1,7 @@
-import creamyMatchaImg from "@/assets/creamy-matcha.jpg";
-import creamyMatchaStrawberryImg from "@/assets/creamy-matcha-strawberry.jpg";
-import creamyChocoImg from "@/assets/creamy-choco.jpg";
-import creamyChocoStrawberryImg from "@/assets/creamy-choco-strawberry.jpg";
+import matchaCreamyImg from "@/assets/matcha-creamy.jpg";
+import matchaCreamyStrawberryImg from "@/assets/matcha-creamy-strawberry.jpg";
+import chocoCreamyImg from "@/assets/choco-creamy.jpg";
+import chocoCreamyStrawberryImg from "@/assets/choco-creamy-strawberry.jpg";
 
 export interface MenuItem {
   id: string;
@@ -20,7 +20,7 @@ export const menuItems: MenuItem[] = [
     name: "Creamy Matcha",
     description: "Matcha premium dengan susu segar dan es, creamy dan menyegarkan.",
     price: 18000,
-    image: creamyMatchaImg,
+    image: matchaCreamyImg,
     category: "signature",
     isBestSeller: true,
   },
@@ -29,7 +29,7 @@ export const menuItems: MenuItem[] = [
     name: "Creamy Matcha Strawberry",
     description: "Perpaduan matcha creamy dengan manis segar strawberry.",
     price: 23000,
-    image: creamyMatchaStrawberryImg,
+    image: matchaCreamyStrawberryImg,
     category: "signature",
     isBestSeller: true,
   },
@@ -38,7 +38,7 @@ export const menuItems: MenuItem[] = [
     name: "Creamy Choco Latte",
     description: "Cokelat creamy dengan susu segar, lembut dan nikmat.",
     price: 20000,
-    image: creamyChocoImg,
+    image: chocoCreamyImg,
     category: "classic",
     isBestSeller: true,
   },
@@ -47,7 +47,7 @@ export const menuItems: MenuItem[] = [
     name: "Creamy Choco Strawberry",
     description: "Cokelat creamy dipadukan dengan strawberry yang segar.",
     price: 25000,
-    image: creamyChocoStrawberryImg,
+    image: chocoCreamyStrawberryImg,
     category: "special",
     isBestSeller: true,
   },
