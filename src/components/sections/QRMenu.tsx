@@ -26,7 +26,7 @@ const QRMenu = () => {
             Scan & Lihat Menu
           </h2>
           <p className="text-muted-foreground mb-10">
-            Scan QR code di bawah ini untuk melihat menu lengkap {brand.name}. Cocok untuk ditempel di meja atau dicetak.
+            Scan QR code di bawah ini untuk melihat menu lengkap {brand.name}.
           </p>
 
           <div className="inline-flex items-center justify-center p-8 rounded-3xl bg-card shadow-sm border border-border">
