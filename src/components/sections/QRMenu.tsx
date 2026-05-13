@@ -1,9 +1,9 @@
 import { QRCodeSVG } from "qrcode.react";
-import { brand } from "@/data/brand";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 
 const QRMenu = () => {
-  // Use current page URL with #menu anchor
+  const { get } = useSiteSettings();
   const menuUrl =
     typeof window !== "undefined"
       ? `${window.location.origin}${window.location.pathname}#menu`
@@ -19,14 +19,12 @@ const QRMenu = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-md mx-auto"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">
-            QR Menu
-          </p>
+          <p className="text-sm uppercase tracking-[0.25em] text-primary font-medium mb-3">QR Menu</p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Scan & Lihat Menu
           </h2>
           <p className="text-muted-foreground mb-10">
-            Scan QR code di bawah ini untuk melihat menu lengkap {brand.name}.
+            Scan QR code di bawah ini untuk melihat menu lengkap {get("brand_name")}.
           </p>
 
           <div className="inline-flex items-center justify-center p-8 rounded-3xl bg-card shadow-sm border border-border">
@@ -40,9 +38,7 @@ const QRMenu = () => {
             />
           </div>
 
-          <p className="text-xs text-muted-foreground mt-6">
-            Scan QR untuk melihat menu {brand.name}
-          </p>
+          <p className="text-xs text-muted-foreground mt-6">Scan QR untuk melihat menu {get("brand_name")}</p>
         </motion.div>
       </div>
     </section>

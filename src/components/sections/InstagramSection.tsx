@@ -1,8 +1,9 @@
-import { brand } from "@/data/brand";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 
 const InstagramSection = () => {
+  const { get } = useSiteSettings();
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto">
@@ -20,10 +21,10 @@ const InstagramSection = () => {
             Ikuti Kami di Instagram
           </h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">
-            Lihat review asli dari pelanggan kami dan temukan inspirasi matcha favoritmu di Instagram {brand.instagramHandle}.
+            Lihat review asli dari pelanggan kami dan temukan inspirasi matcha favoritmu di Instagram {get("instagram_handle")}.
           </p>
           <a
-            href={brand.instagramUrl}
+            href={get("instagram_url")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
