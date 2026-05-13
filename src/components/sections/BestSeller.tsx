@@ -1,9 +1,10 @@
-import { menuItems } from "@/data/menu";
+import { useProducts } from "@/hooks/useProducts";
 import ProductCard from "@/components/ProductCard";
 import { motion } from "framer-motion";
 
 const BestSeller = () => {
-  const bestSellers = menuItems.filter((item) => item.isBestSeller);
+  const { data: products = [] } = useProducts();
+  const bestSellers = products.filter((p) => p.is_best_seller && !p.is_coming_soon);
 
   return (
     <section className="py-24 bg-background">

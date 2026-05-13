@@ -1,9 +1,10 @@
-
-import { menuItems } from "@/data/menu";
+import { useProducts } from "@/hooks/useProducts";
 import ProductCard from "@/components/ProductCard";
 import { motion } from "framer-motion";
 
 const FullMenu = () => {
+  const { data: products = [], isLoading } = useProducts();
+
   return (
     <section id="menu" className="py-24 bg-background">
       <div className="container mx-auto">
@@ -22,11 +23,15 @@ const FullMenu = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {menuItems.map((item, i) => (
-            <ProductCard key={item.id} item={item} index={i} />
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="text-center text-muted-foreground">Memuat menu...</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {products.map((item, i) => (
+              <ProductCard key={item.id} item={item} index={i} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

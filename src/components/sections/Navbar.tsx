@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { brand, getWhatsAppUrl } from "@/data/brand";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -11,6 +11,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { get, whatsappUrl } = useSiteSettings();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -30,10 +31,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <a href="#" className="font-serif text-2xl font-bold text-foreground tracking-tight">
-          {brand.name}
+          {get("brand_name")}
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -45,7 +45,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href={getWhatsAppUrl()}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
@@ -54,7 +54,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 text-foreground"
@@ -64,7 +63,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -85,7 +83,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href={getWhatsAppUrl()}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"

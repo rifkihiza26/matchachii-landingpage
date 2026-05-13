@@ -1,6 +1,8 @@
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 
 const About = () => {
+  const { get } = useSiteSettings();
   return (
     <section id="tentang" className="py-24 bg-secondary/50">
       <div className="container mx-auto">
@@ -15,20 +17,11 @@ const About = () => {
               Cerita Kami
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Tentang Matchachii
+              {get("about_title")}
             </h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
-              <p>
-                Matchachii lahir dari kecintaan kami terhadap matcha berkualitas tinggi. 
-                Setiap gelas yang kami sajikan dibuat dengan matcha premium yang dipilih 
-                langsung, memastikan rasa autentik yang lembut dan menyegarkan.
-              </p>
-              <p>
-                Kami percaya bahwa menikmati matcha bukan sekadar minum — 
-                tapi sebuah momen ketenangan di tengah kesibukan. Dengan proses 
-                handmade dan bahan-bahan segar, kami menghadirkan pengalaman matcha 
-                terbaik untuk kamu.
-              </p>
+              <p>{get("about_paragraph_1")}</p>
+              <p>{get("about_paragraph_2")}</p>
             </div>
           </motion.div>
         </div>

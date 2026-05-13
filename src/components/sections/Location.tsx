@@ -1,8 +1,9 @@
-import { brand, getWhatsAppUrl } from "@/data/brand";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { MapPin, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Location = () => {
+  const { get, whatsappUrl } = useSiteSettings();
   return (
     <section id="lokasi" className="py-24 bg-secondary/50">
       <div className="container mx-auto">
@@ -22,7 +23,6 @@ const Location = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,19 +30,20 @@ const Location = () => {
             transition={{ duration: 0.6 }}
             className="rounded-2xl overflow-hidden shadow-sm aspect-video"
           >
-            <iframe
-              src={brand.googleMapsEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Lokasi Matchachii"
-            />
+            {get("google_maps_embed_url") && (
+              <iframe
+                src={get("google_maps_embed_url")}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi"
+              />
+            )}
           </motion.div>
 
-          {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -56,18 +57,14 @@ const Location = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
-                    Alamat
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {brand.address}
-                  </p>
+                  <h3 className="font-serif text-lg font-semibold text-foreground mb-1">Alamat</h3>
+                  <p className="text-muted-foreground leading-relaxed">{get("address")}</p>
                 </div>
               </div>
             </div>
 
             <a
-              href={getWhatsAppUrl()}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl bg-primary p-8 flex items-center gap-4 hover:bg-primary/90 transition-colors group"
