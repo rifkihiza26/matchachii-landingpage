@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import WhatsappOrderButton from "@/components/WhatsappOrderButton";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -11,7 +12,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const { get, whatsappUrl } = useSiteSettings();
+  const { get } = useSiteSettings();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
