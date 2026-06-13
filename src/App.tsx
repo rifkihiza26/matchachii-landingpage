@@ -12,6 +12,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminSettings from "./pages/admin/AdminSettings";
+import AdminLocations from "./pages/admin/AdminLocations";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             >
               <Route index element={<AdminDashboard />} />
               <Route path="products" element={<AdminProducts />} />
+              <Route path="locations" element={<AdminLocations />} />
               <Route path="settings" element={<AdminSettings />} />
             </Route>
             <Route path="*" element={<NotFound />} />

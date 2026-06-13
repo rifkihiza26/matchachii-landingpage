@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { LayoutDashboard, Package, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, Package, Settings, LogOut, MapPin } from "lucide-react";
 
 const AdminLayout = () => {
   const { signOut, user } = useAuth();
@@ -31,6 +31,9 @@ const AdminLayout = () => {
           </NavLink>
           <NavLink to="/admin/products" className={navItem}>
             <Package size={18} /> Produk
+          </NavLink>
+          <NavLink to="/admin/locations" className={navItem}>
+            <MapPin size={18} /> Lokasi
           </NavLink>
           <NavLink to="/admin/settings" className={navItem}>
             <Settings size={18} /> Pengaturan
