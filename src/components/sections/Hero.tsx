@@ -1,9 +1,10 @@
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import WhatsappOrderButton from "@/components/WhatsappOrderButton";
 import heroImage from "@/assets/hero-matcha.jpg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const { get, whatsappUrl } = useSiteSettings();
+  const { get } = useSiteSettings();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
@@ -27,14 +28,9 @@ const Hero = () => {
             {get("brand_tagline")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
-            >
+            <WhatsappOrderButton className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 cursor-pointer">
               Pesan via WhatsApp
-            </a>
+            </WhatsappOrderButton>
             <a
               href="#menu"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-all"
