@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { usePrimaryLocation, buildWhatsappUrl } from "@/hooks/useLocations";
 
 export type SettingsMap = Record<string, string>;
 
@@ -55,9 +56,11 @@ export const useSiteSettings = () => {
 
   const get = (key: SettingKey) => settings[key] ?? "";
 
-  const whatsappUrl = `https://wa.me/${get("whatsapp_number")}?text=${encodeURIComponent(
-    get("whatsapp_message")
-  )}`;
+  const { primary } = usePrimaryLocation();
+
+  const waNumber = primary?.whatsapp_number || get("whatsapp_number");
+  const waMessage = primary?.whatsapp_message || get("whatsapp_message");
+  const whatsappUrl = buildWhatsappUrl(waNumber, waMessage);
 
   return { settings, get, whatsappUrl, isLoading: query.isLoading };
 };

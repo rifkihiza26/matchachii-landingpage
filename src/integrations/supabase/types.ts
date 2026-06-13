@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      locations: {
+        Row: {
+          address: string
+          created_at: string
+          google_maps_embed_url: string
+          id: string
+          is_active: boolean
+          is_primary: boolean
+          name: string
+          sort_order: number
+          updated_at: string
+          whatsapp_message: string
+          whatsapp_number: string
+        }
+        Insert: {
+          address?: string
+          created_at?: string
+          google_maps_embed_url?: string
+          id?: string
+          is_active?: boolean
+          is_primary?: boolean
+          name: string
+          sort_order?: number
+          updated_at?: string
+          whatsapp_message?: string
+          whatsapp_number?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          google_maps_embed_url?: string
+          id?: string
+          is_active?: boolean
+          is_primary?: boolean
+          name?: string
+          sort_order?: number
+          updated_at?: string
+          whatsapp_message?: string
+          whatsapp_number?: string
+        }
+        Relationships: []
+      }
       products: {
         Row: {
           category: string
