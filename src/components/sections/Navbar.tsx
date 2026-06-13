@@ -45,14 +45,9 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
+          <WhatsappOrderButton className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors cursor-pointer">
             Pesan via WhatsApp
-          </a>
+          </WhatsappOrderButton>
         </div>
 
         <button
@@ -83,14 +78,9 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
-              >
+              <WhatsappOrderButton className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground cursor-pointer">
                 Pesan via WhatsApp
-              </a>
+              </WhatsappOrderButton>
             </div>
           </motion.div>
         )}
